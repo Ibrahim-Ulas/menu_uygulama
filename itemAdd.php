@@ -131,6 +131,8 @@ else{
     </div>
 </body>
 <div style="text-align: center;">
-<a href="admin.php">Kategori Ekleme Paneline Geri Dön</a>
+<button><a href="admin.php">Kategori Ekleme Paneline Geri Dön</a></button>
+<button><a href="itemList.php?id=<?php echo htmlspecialchars($category['id']); ?>">Ürün Görüntüleme Paneline Geri Dön</a></button>
+
 </div>
 </html>

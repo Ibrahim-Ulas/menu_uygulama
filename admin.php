@@ -61,7 +61,7 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menü Yönetim Paneli</title>
+    <title>Kategori Ekleme Paneli</title>
     <style>
     body{
         text-align: center;
@@ -89,11 +89,12 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
 
     <!-- Mevcut Menü Öğeleri -->
     <h2>Mevcut Menü</h2>
-    <ul>
+    <ul style="display: inline-block;">
         <?php foreach ($categories as $category): ?>
             <li>
                 <a href="itemList.php?id=<?php echo htmlspecialchars($category['id']); ?>">
                     <?php echo htmlspecialchars($category['name']); ?>
+                    <br>
                 <img src="<?php echo htmlspecialchars($category['image']); ?>" width="50">
                 </a>
             </li>
@@ -102,5 +103,6 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
     
 
 </body>
-
+<br>
+<button><a href="logout.php">Yönetim Oturumunu Kapat</a></button>
 </html>
