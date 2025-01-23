@@ -45,6 +45,7 @@ if ($category_id) {
             height: 100px;
             display: block;
         }
+        
     </style>
 </head>
 <body>
@@ -55,6 +56,7 @@ if ($category_id) {
             <li><?=$items["name"]?></a>
             <img src=" <?=htmlspecialchars($items['image'])?>"alt="<?= htmlspecialchars($items['name']) ?>">
             <p><?= $items['price'] ?> TL</p>
+            <p style="border: outset;"><?= $items['description']?></p>
         </li>
             <?php endforeach ?>
 

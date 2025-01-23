@@ -37,7 +37,7 @@ if ($item) {
         $category_id = $item['category_id'] ?? null; // 'category_id' sütunu kontrol ediliyor
 
         if ($category_id) {
-            header('Location: itemEdit.php?id=' . $item_id);
+            header('Location: itemList.php?id=' . urlencode($category_id));
             exit;
         } else {
             echo "Kategori bilgisi bulunamadı!";

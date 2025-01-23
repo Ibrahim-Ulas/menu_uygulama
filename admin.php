@@ -92,7 +92,7 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
     <ul>
         <?php foreach ($categories as $category): ?>
             <li>
-                <a href="itemAdd.php?id=<?php echo htmlspecialchars($category['id']); ?>">
+                <a href="itemList.php?id=<?php echo htmlspecialchars($category['id']); ?>">
                     <?php echo htmlspecialchars($category['name']); ?>
                 <img src="<?php echo htmlspecialchars($category['image']); ?>" width="50">
                 </a>
@@ -102,4 +102,5 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
     
 
 </body>
+
 </html>

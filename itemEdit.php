@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button><a type ="submit" href="itemDelete.php?id=<?php echo htmlspecialchars($item_id);?>">Sil</a></button>
     </form>
     <div style="text-align: center; margin-top: 20px;">
-        <a href="itemAdd.php?id=<?php echo htmlspecialchars($item['category_id']); ?>">Geri Dön</a>
+        <a href="itemList.php?id=<?php echo htmlspecialchars($item['category_id']); ?>">Geri Dön</a>
         
     </div>
 </body>
