@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="file" name="image" id="image">
         <br>
         <button type="submit">Güncelle</button>
-        <button><a type ="submit" href="itemDelete.php?id=<?php echo htmlspecialchars($item_id);?>">Sil</a></button>
+        <button onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?');"><a type ="submit" href="itemDelete.php?id=<?php echo htmlspecialchars($item_id);?>">Sil</a></button>
     </form>
     <div style="text-align: center; margin-top: 20px;">
         <a href="itemList.php?id=<?php echo htmlspecialchars($item['category_id']); ?>">Geri Dön</a>

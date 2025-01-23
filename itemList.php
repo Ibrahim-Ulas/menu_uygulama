@@ -73,6 +73,8 @@ if ($category_id) {
 </body>
 <div style="text-align: center;">
     <button><a href="itemAdd.php?id=<?php echo htmlspecialchars($category['id']); ?>">Bu Kategoriye Yeni Ürün Ekle</a></button>
+    <button onclick="return confirm('Bu Kategoriyi Silmek İstediğinize Emin Misiniz?');"><a href="categoryDelete.php?id=<?php echo htmlspecialchars($category['id']); ?>">Bu Kategoriyi Sil</a></button>
     <button><a href="admin.php">Kategori Ekleme Paneline Geri Dön</a></button>
+    
 </div>
 </html>
