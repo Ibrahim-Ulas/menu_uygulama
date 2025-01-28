@@ -62,18 +62,13 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kategori Ekleme Paneli</title>
+    <?php include_once ('bs.php'); ?>
     <style>
-    body{
-        text-align: center;
-      
-        
-
-
-    }
+   <?php include_once ('css.css'); ?>
     </style>
 </head>
 <body>
-    <h1>Kategori Ekleme</h1>
+    <h1 class="baslik">Kategori Ekleme</h1>
     
     <!-- Yeni Menü Öğesi Ekleme Formu -->
     <form action="" method="POST" enctype="multipart/form-data">
@@ -81,28 +76,33 @@ $categories = $db->query('SELECT * FROM menu')->fetchAll();
         <label for="name">Kategori Adı:</label>
         <input type="text" name="name" id="name" required>
         <br>
-        <label for="image">Resim</label>
+        <label for="image">Resim:</label>
         <input type="file" name="image" id="image" required>
         <br>
         <button type="submit">Ekle</button>
     </form>
 
     <!-- Mevcut Menü Öğeleri -->
-    <h2>Mevcut Menü</h2>
-    <ul style="display: inline-block;">
+    <h2 class="baslik">Mevcut Menü</h2>
+    <ul class="list" style="display: inline-block;">
         <?php foreach ($categories as $category): ?>
-            <li>
+            <button>
+                <li>
                 <a href="itemList.php?id=<?php echo htmlspecialchars($category['id']); ?>">
                     <?php echo htmlspecialchars($category['name']); ?>
                     <br>
                 <img src="<?php echo htmlspecialchars($category['image']); ?>" width="50">
                 </a>
             </li>
+            </button>
+
         <?php endforeach; ?>
     </ul>
     
 
 </body>
 <br>
+<div style="text-align: center;">
 <button><a href="logout.php">Yönetim Oturumunu Kapat</a></button>
+</div>
 </html>

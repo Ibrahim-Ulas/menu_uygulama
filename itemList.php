@@ -36,33 +36,25 @@ if ($category_id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ürün Görüntüleme Paneli</title>
-   <style> .list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;            
-        }
-        .list li{
-            margin: 10px 15px;
-            
-        }
-        img{ 
-            max-width: 100px;
-            height: 100px;
-            display: block;
-        }
+    <?php include_once ('bs.php'); ?>
+   <style> 
+        <?php include_once ('css.css'); ?>
         </style>
 </head>
 <body>
+    
 <div>
        <h1 style="text-align: center;"><?php echo htmlspecialchars($category['name'])?></h1>
         <ul class="list">
             <?php foreach($menuItems as $items): ?>
+            <button>
             <li><a href="itemEdit.php?id=<?php echo $items['id']?>"><?php echo $items["name"]?>
             <img src=" <?php echo htmlspecialchars($items['image'])?>"alt="<?= htmlspecialchars($items['name']) ?>">
             </a>
             <p><?php echo $items['price'] ?> TL</p>
+            <p style="border: outset;"><?php echo $items['description'] ?></p>
         </li>
+        </button>
             <?php endforeach ?>
 
         </ul>
@@ -70,11 +62,14 @@ if ($category_id) {
 
 
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
+<style>
+</style>
 <div style="text-align: center;">
-    <button><a href="itemAdd.php?id=<?php echo htmlspecialchars($category['id']); ?>">Bu Kategoriye Yeni Ürün Ekle</a></button>
-    <button onclick="return confirm('Bu Kategoriyi Silmek İstediğinize Emin Misiniz?');"><a href="categoryDelete.php?id=<?php echo htmlspecialchars($category['id']); ?>">Bu Kategoriyi Sil</a></button>
-    <button><a href="admin.php">Kategori Ekleme Paneline Geri Dön</a></button>
+    <button type="button" class="btn btn-success"><a href="itemAdd.php?id=<?php echo htmlspecialchars($category['id']); ?>">Bu Kategoriye Yeni Ürün Ekle</a></button>
+    <button type="button" class="btn btn-danger" onclick="return confirm('Bu Kategoriyi Silmek İstediğinize Emin Misiniz?');"><a href="categoryDelete.php?id=<?php echo htmlspecialchars($category['id']); ?>">Bu Kategoriyi Sil</a></button>
+    <button type="button" class="btn btn-warning"><a href="admin.php">Kategori Ekleme Paneline Geri Dön</a></button>
     
 </div>
 </html>

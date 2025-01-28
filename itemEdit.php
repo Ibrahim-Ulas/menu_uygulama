@@ -69,23 +69,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ürün Güncelleme Paneli</title>
+    <?php include_once('bs.php'); ?>
     <style>
-        form {
-            text-align: center;
-            margin-top: 20px;
-        }
-        img {
-            max-width: 100px;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
-        }
+        <?php include_once('edit.css'); ?>
     </style>
 </head>
+
 <body>
     <h1 style="text-align: center;">Ürün Güncelleme</h1>
     <form action="" method="POST" enctype="multipart/form-data">
@@ -103,11 +97,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="file" name="image" id="image">
         <br>
         <button type="submit">Güncelle</button>
-        <button onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?');"><a type ="submit" href="itemDelete.php?id=<?php echo htmlspecialchars($item_id);?>">Sil</a></button>
+        <button onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?');"><a type="submit" href="itemDelete.php?id=<?php echo htmlspecialchars($item_id); ?>">Sil</a></button>
     </form>
     <div style="text-align: center; margin-top: 20px;">
-        <a href="itemList.php?id=<?php echo htmlspecialchars($item['category_id']); ?>">Geri Dön</a>
-        
+        <button><a href="itemList.php?id=<?php echo htmlspecialchars($item['category_id']); ?>">Geri Dön</a></button>
+
     </div>
 </body>
+
 </html>

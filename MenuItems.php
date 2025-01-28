@@ -9,7 +9,7 @@ $options = [
 ];
 $db = new PDO($dsn, $username, $password, $options);
 
-$category_id=$_GET['id'] ?? null;
+$category_id = $_GET['id'] ?? null;
 
 if ($category_id) {
     $stmt = $db->prepare('SELECT name FROM menu WHERE id = :category_id');
@@ -25,48 +25,39 @@ if ($category_id) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo ($category['name']);?></title>
+    <title><?php echo ($category['name']); ?></title>
+    <?php include_once('bs.php'); ?>
     <style>
-        .list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;            
-        }
-        .list li{
-            margin: 10px 15px;
-            
-        }
-        img{ 
-            max-width: 100px;
-            height: 100px;
-            display: block;
-        }
-        
+        <?php include_once('css.css'); ?>
     </style>
 </head>
+
 <body>
-   <div>
-        <h1 style="text-align: center;"><?php echo htmlspecialchars($category['name'])?></h1>
+
+
+    <div>
+        <h1 style="text-align: center;"><?php echo htmlspecialchars($category['name']) ?></h1>
         <ul class="list">
-            <?php foreach($menuItems as $items): ?>
-            <li><?=$items["name"]?></a>
-            <img src=" <?=htmlspecialchars($items['image'])?>"alt="<?= htmlspecialchars($items['name']) ?>">
-            <p><?= $items['price'] ?> TL</p>
-            <p style="border: outset;"><?= $items['description']?></p>
-        </li>
+            <?php foreach ($menuItems as $items): ?>
+                <li><button>
+                        <p><?= $items["name"] ?></p>
+                        <img src=" <?= htmlspecialchars($items['image']) ?>" alt="<?= htmlspecialchars($items['name']) ?>">
+                        <p><?= $items['price'] ?> TL</p>
+                        <p style="border: outset;"><?= $items['description'] ?></p>
+                    </button>
+                </li>
             <?php endforeach ?>
-
         </ul>
+    </div>
 
 
-
-   </div>
 </body>
 <div style="text-align: center;">
-<a href="menu.php">Kategorilere Geri Dön</a>
+    <button><a href="menu.php">Kategorilere Geri Dön</a></button>
 </div>
+
 </html>

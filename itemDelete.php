@@ -48,6 +48,5 @@ if ($item) {
 } else {
     echo "Ürün bulunmamakta!";
 }
-var_dump($item_id);
-var_dump($item);
+
 

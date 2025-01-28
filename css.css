@@ -1,0 +1,51 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration-color: white;
+}
+.list li {
+  margin: 10px 15px;
+}
+img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+}
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  margin-top: 20px;
+  background-color: black;
+  color:white;
+}
+
+body {
+  background-color: darkred;
+}
+p {
+  color: white;
+}
+.baslik{
+text-align: center;
+}
+label{
+  color: white;
+  border: outset;
+  background-color: black;
+}
+input{
+  color: white;
+  background-color: black;
+}

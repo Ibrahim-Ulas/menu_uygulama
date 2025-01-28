@@ -1,0 +1,46 @@
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+
+}
+body{
+    background-color: darkred;
+}
+button{
+    color: white;
+    background-color: black;
+}
+label{
+    border: outset;
+    color: white;
+    background-color: black;
+}
+input{
+    background-color: black;
+    color: white;
+}
+textarea{
+    background-color: black;
+    color: white;
+}
+ul{
+    text-align: center;
+}
+.baslik{
+    text-align: center;
+}
+p{
+    color: white;
+}
